@@ -15,6 +15,7 @@ html {
     --color-text: #333;
     --color-light-text: #fff;
     --color-accent: #6aa84f; /* Verde más brillante/amigable */
+    --color-dark-text: #391d01; /* Marrón oscuro para contraste */
 }
 
 /* Base y Tipografía */
@@ -46,19 +47,15 @@ header {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* ASÍ QUEDA AHORA */
 .logo {
-    /* Quitamos el font-size y el color */
-    /* Le damos un pequeño relleno para que se centre verticalmente */
     padding-top: 5px; 
 }
 
 .logo img {
-    height: 60px;  /* Le damos una altura fija. */
-    width: auto;   /* El ancho se ajusta solo para que no se deforme */
+    height: 60px;
+    width: auto;
     display: block; 
 }
-
 
 nav a {
     color: var(--color-light-text);
@@ -74,47 +71,42 @@ nav a:hover {
 }
 
 /* ==============================================
-   Sección Principal (Hero)
+   Sección Principal (Hero) - MODIFICADO
    ============================================== */
 .hero {
-    /* AQUÍ CAMBIAS LA FOTO DE TRASLASIERRA:
-      Reemplaza 'foto-traslasierra.jpg' por el nombre de tu foto.
-    */
-    background: url('foto-traslasierra.jpg') no-repeat center center/cover;
+    /* ELIMINADA LA IMAGEN DE FONDO */
+    background: linear-gradient(135deg, var(--color-primary) 0%, #b8d492 100%); /* Degradado verde/claro */
     height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #c3c98d;
+    color: var(--color-light-text);
     position: relative;
     padding: 0 5%;
 }
 
 .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3); /* Capa oscura para legibilidad */
+    /* Eliminado el filtro oscuro ya que el fondo es sólido */
+    content: none; 
 }
 
 .hero-content {
     z-index: 1;
     max-width: 900px;
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(2px);
+    /* Fondo más transparente para un efecto limpio */
+    background-color: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(1px);
     border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .hero h1 {
     font-size: 3.8em;
     margin-bottom: 10px;
     color: var(--color-secondary);
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    text-shadow: none; /* Quitamos la sombra para un diseño más plano */
 }
 
 .hero p {
@@ -125,7 +117,7 @@ nav a:hover {
 
 .cta-button {
     background-color: var(--color-secondary);
-    color: #391d01;
+    color: var(--color-dark-text);
     padding: 15px 40px;
     text-decoration: none;
     font-size: 1.2em;
@@ -137,7 +129,7 @@ nav a:hover {
 }
 
 .cta-button:hover {
-    background-color: #ffe699; /* Amarillo más claro */
+    background-color: #ffe699; 
     transform: translateY(-3px);
 }
 
@@ -150,27 +142,27 @@ nav a:hover {
 }
 
 .casa-background {
-    background-color: #fff; /* Fondo para la sección de Casas */
+    background-color: #fff; 
 }
 
 .history-background {
-    background-color: var(--color-background); /* Fondo para la sección de Historia */
+    background-color: var(--color-background); 
 }
 
 .contact-background {
-    background-color: var(--color-background); /* Fondo para la sección de Contacto */
+    background-color: var(--color-background); 
 }
 
 h2 {
     font-size: 2.8em;
     margin-bottom: 0.5em;
-    color: #391d01;
+    color: var(--color-dark-text);
     text-shadow: 2px 2px 0 var(--color-secondary);
 }
 
 .subtitle {
     font-weight: 300;
-    color: #391d01;
+    color: var(--color-dark-text);
     margin-bottom: 40px;
     font-size: 1.1em;
     display: block;
@@ -185,7 +177,6 @@ h2 {
     opacity: 0.8;
 }
 
-/* Separador más fino para dentro de las secciones */
 .separator-inline {
     margin: 30px 0;
     border: 0;
@@ -193,7 +184,7 @@ h2 {
 }
 
 /* ==============================================
-   Galería de Casas y Acordeón Interactivo
+   Galería de Casas - MODIFICADO
    ============================================== */
 .casa-gallery {
     display: flex;
@@ -219,12 +210,20 @@ h2 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.casa-card img:first-child {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
+/* NUEVA CABECERA DE COLOR (SIMULA LA FOTO) */
+.casa-card::before {
+    content: '';
     display: block;
+    height: 100px; /* Alto fijo para la cabecera de color */
+    background: linear-gradient(180deg, var(--color-secondary) 0%, #fff 100%);
+    /* Tono diferente para cada casa (ejemplo) */
 }
+.casa-card:nth-child(1)::before { background: linear-gradient(180deg, var(--color-secondary) 0%, #fff 100%); }
+.casa-card:nth-child(2)::before { background: linear-gradient(180deg, #b8d492 0%, #fff 100%); }
+.casa-card:nth-child(3)::before { background: linear-gradient(180deg, #f7d4c0 0%, #fff 100%); }
+
+/* REGLAS ELIMINADAS: .casa-card img:first-child */
+/* REGLAS ELIMINADAS: .inner-images img (se muestra texto) */
 
 .casa-card h3 {
     padding: 20px 0 5px;
@@ -238,37 +237,30 @@ h2 {
     color: #666;
 }
 
-/* -- ESTILOS PARA EL ACORDEÓN DE FOTOS -- */
+/* -- ESTILOS PARA EL ACORDEÓN DE TEXTO -- */
 .inner-images.fotos-content {
-    /* Oculto por defecto */
     max-height: 0;
     overflow: hidden;
-    display: flex;
-    justify-content: space-around;
-    
-    /* Animación suave */
+    display: block; /* Cambiado a block para el texto */
     transition: max-height 0.5s ease-out;
-
-    /* Quitamos el padding para que no ocupe espacio cuando está cerrado */
     padding: 0 20px;
 }
 
 .inner-images.fotos-content.is-open {
-    /* Se aplica con JS para mostrarlo */
-    max-height: 500px; /* (Un valor alto para que quepa el contenido) */
-    
-    /* Devolvemos el padding cuando está abierto */
+    max-height: 500px;
     padding-bottom: 20px;
 }
 
-.inner-images img {
-    width: 48%; 
-    height: 140px;
-    object-fit: cover;
+.equipamiento-text {
+    /* Estilo para el texto dentro del acordeón */
+    background-color: var(--color-background);
+    padding: 15px;
     border-radius: 8px;
-    border: 2px dashed var(--color-secondary);
+    border: 1px dashed var(--color-accent);
+    text-align: left;
+    font-size: 0.95em;
+    color: var(--color-dark-text);
 }
-/* -- FIN ESTILOS ACORDEÓN -- */
 
 
 .details-button {
@@ -289,7 +281,7 @@ h2 {
 
 
 /* ==============================================
-   Sección Historia y Contacto
+   Sección Historia y Contacto - MODIFICADO
    ============================================== */
 .history-content {
     display: flex;
@@ -305,18 +297,11 @@ h2 {
     text-align: justify;
 }
 
-.history-content img {
-    flex: 1;
-    max-width: 400px;
-    height: auto;
-    border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    object-fit: cover;
-    min-width: 250px;
-}
+/* ELIMINADA LA IMAGEN DE HISTORIA */
+/* .history-content img { ... } */
 
 .margarita-profile {
-    background-color: #faf9f7; /* Un tono más claro que el fondo general */
+    background-color: #faf9f7;
     padding: 25px;
     border-radius: 10px;
     border-left: 5px solid var(--color-secondary);
@@ -326,7 +311,7 @@ h2 {
 .owner-quote {
     font-style: italic;
     font-weight: 600;
-    color:#4b3200;
+    color: var(--color-dark-text);
     margin-bottom: 15px;
 }
 
@@ -360,12 +345,40 @@ h2 {
     text-align: left;
 }
 
+/* -- ESTILOS PARA LOS ÍCONOS (AÑADIDOS) -- */
 .contact-info li {
     margin-bottom: 10px;
+    display: flex; 
+    align-items: center;
+    font-size: 1.05em;
 }
 
+.contact-info li i {
+    color: var(--color-accent);
+    font-size: 1.3em;
+    width: 30px; 
+    text-align: center;
+    margin-right: 10px; 
+}
+.contact-info li i.fa-whatsapp {
+    color: #25D366; 
+}
+
+/* Iconos en títulos */
+h2 i, h3 i {
+    margin-right: 12px;
+    color: var(--color-accent);
+}
+.margarita-profile h3 i {
+    color: maroon; 
+}
+.casa-card h3 i {
+    color: var(--color-primary); 
+}
+/* -- FIN ESTILOS ÍCONOS -- */
+
 .contact-info a {
-    color: var(--color-primary); /* Cambiado de amarillo a verde para mejor contraste */
+    color: var(--color-primary); 
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s;
@@ -397,23 +410,16 @@ footer {
    Efectos Dinámicos (Animaciones)
    ============================================== */
 
-/* -- EFECTO FADE-IN AL BAJAR -- */
 .fade-in {
-    /* Oculto por defecto */
     opacity: 0;
-    /* Ligeramente movido hacia abajo */
     transform: translateY(30px);
-    /* Animación de entrada */
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .fade-in.is-visible {
-    /* Estado final (visible) */
     opacity: 1;
     transform: translateY(0);
 }
-/* -- FIN EFECTO FADE-IN -- */
-
 
 /* ==============================================
    Responsividad (Móviles)
@@ -423,9 +429,7 @@ footer {
         flex-direction: column;
     }
     
-    .history-content img {
-        border-radius: 15px; /* Menos lúdico en móvil para adaptarse mejor */
-    }
+    /* El history-content img ya no existe, eliminamos la regla. */
 
     .hero h1 {
         font-size: 2.5em;
