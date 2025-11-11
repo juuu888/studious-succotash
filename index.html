@@ -68,7 +68,7 @@
     <hr class="separator">
 
     <section id="historia" class="section-padding history-background">
-        <h2 style="margin-bottom: 40px;"><i class="fas fa-scroll"></i> No es solo un lugar, es una leyenda:</h2>
+        <h2><i class="fas fa-scroll"></i> No es solo un lugar, es una leyenda:</h2>
         <div class="history-content fade-in">
             <div class="history-text">
                 <p style="margin-bottom: 20px; font-size: 1.1em;">Cuentan los viejos de las sierras, que por allá en 1984, una familia conformada por un matrimonio y dos niñas preciosas, brillantes como el sol, delicadas como una flor... (continúa la bella leyenda).
@@ -130,8 +130,7 @@
     <script>
         
         /**
-         * --- Lógica del Acordeón de Casas ---
-         * El script se mantiene igual, pero ahora muestra texto en lugar de imágenes.
+         * Lógica del Acordeón de Casas (modificado para mostrar Detalles en lugar de Fotos)
          */
         const allToggleButtons = document.querySelectorAll('.js-toggle-fotos');
 
@@ -143,16 +142,16 @@
                 content.classList.toggle('is-open');
 
                 if (content.classList.contains('is-open')) {
-                    this.textContent = "Ocultar Detalles 🔼"; // Cambiado a "Detalles"
+                    this.textContent = "Ocultar Detalles 🔼"; 
                 } else {
-                    this.textContent = "Ver Equipamiento y Detalles"; // Cambiado a "Detalles"
+                    this.textContent = "Ver Equipamiento y Detalles"; 
                 }
             });
         });
 
 
         /**
-         * --- Lógica del Fade-in al Bajar (Intersection Observer) ---
+         * Lógica del Fade-in al Bajar (Intersection Observer)
          */
         const fadeElements = document.querySelectorAll('.fade-in');
 
