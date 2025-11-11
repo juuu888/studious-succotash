@@ -1,0 +1,441 @@
+/* ==============================================
+   Navegación y Variables de Color
+   ============================================== */
+
+/* -- DESPLAZAMIENTO SUAVE -- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Variables de Color para la estética lúdica */
+:root {
+    --color-primary: #b0db65; /* Verde Hoja/Oscuro */
+    --color-secondary: #eece7b; /* Amarillo Pastel Lúdico */
+    --color-background: #fff8b9; /* Fondo Blanco Roto/Crema Suave */
+    --color-text: #333;
+    --color-light-text: #fff;
+    --color-accent: #6aa84f; /* Verde más brillante/amigable */
+}
+
+/* Base y Tipografía */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* Estilo para la Navegación (Header) */
+header {
+    background-color: var(--color-primary);
+    color: var(--color-light-text);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ASÍ QUEDA AHORA */
+.logo {
+    /* Quitamos el font-size y el color */
+    /* Le damos un pequeño relleno para que se centre verticalmente */
+    padding-top: 5px; 
+}
+
+.logo img {
+    height: 60px;  /* Le damos una altura fija. */
+    width: auto;   /* El ancho se ajusta solo para que no se deforme */
+    display: block; 
+}
+
+
+nav a {
+    color: var(--color-light-text);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--color-secondary);
+    text-decoration: underline;
+}
+
+/* ==============================================
+   Sección Principal (Hero)
+   ============================================== */
+.hero {
+    /* AQUÍ CAMBIAS LA FOTO DE TRASLASIERRA:
+      Reemplaza 'foto-traslasierra.jpg' por el nombre de tu foto.
+    */
+    background: url('foto-traslasierra.jpg') no-repeat center center/cover;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #c3c98d;
+    position: relative;
+    padding: 0 5%;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Capa oscura para legibilidad */
+}
+
+.hero-content {
+    z-index: 1;
+    max-width: 900px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px);
+    border-radius: 15px;
+}
+
+.hero h1 {
+    font-size: 3.8em;
+    margin-bottom: 10px;
+    color: var(--color-secondary);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+}
+
+.hero p {
+    font-size: 1.4em;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.cta-button {
+    background-color: var(--color-secondary);
+    color: #391d01;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: #ffe699; /* Amarillo más claro */
+    transform: translateY(-3px);
+}
+
+/* ==============================================
+   Estilos Generales de Secciones
+   ============================================== */
+.section-padding {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.casa-background {
+    background-color: #fff; /* Fondo para la sección de Casas */
+}
+
+.history-background {
+    background-color: var(--color-background); /* Fondo para la sección de Historia */
+}
+
+.contact-background {
+    background-color: var(--color-background); /* Fondo para la sección de Contacto */
+}
+
+h2 {
+    font-size: 2.8em;
+    margin-bottom: 0.5em;
+    color: #391d01;
+    text-shadow: 2px 2px 0 var(--color-secondary);
+}
+
+.subtitle {
+    font-weight: 300;
+    color: #391d01;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    display: block;
+}
+
+/* Estilos Separador */
+.separator {
+    border: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--color-background) 0%, var(--color-secondary) 15%, var(--color-primary) 50%, var(--color-secondary) 85%, var(--color-background) 100%);
+    margin: 60px 0;
+    opacity: 0.8;
+}
+
+/* Separador más fino para dentro de las secciones */
+.separator-inline {
+    margin: 30px 0;
+    border: 0;
+    border-top: 1px dashed var(--color-secondary);
+}
+
+/* ==============================================
+   Galería de Casas y Acordeón Interactivo
+   ============================================== */
+.casa-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 50px;
+}
+
+.casa-card {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border: 3px solid var(--color-accent);
+    width: 320px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.casa-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.casa-card img:first-child {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.casa-card h3 {
+    padding: 20px 0 5px;
+    color: var(--color-primary);
+    font-size: 1.8em;
+}
+
+.casa-card p {
+    padding: 0 20px 15px;
+    font-size: 1em;
+    color: #666;
+}
+
+/* -- ESTILOS PARA EL ACORDEÓN DE FOTOS -- */
+.inner-images.fotos-content {
+    /* Oculto por defecto */
+    max-height: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    
+    /* Animación suave */
+    transition: max-height 0.5s ease-out;
+
+    /* Quitamos el padding para que no ocupe espacio cuando está cerrado */
+    padding: 0 20px;
+}
+
+.inner-images.fotos-content.is-open {
+    /* Se aplica con JS para mostrarlo */
+    max-height: 500px; /* (Un valor alto para que quepa el contenido) */
+    
+    /* Devolvemos el padding cuando está abierto */
+    padding-bottom: 20px;
+}
+
+.inner-images img {
+    width: 48%; 
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px dashed var(--color-secondary);
+}
+/* -- FIN ESTILOS ACORDEÓN -- */
+
+
+.details-button {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-light-text);
+    padding: 12px 25px;
+    text-decoration: none;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.details-button:hover {
+    background-color: var(--color-primary);
+}
+
+
+/* ==============================================
+   Sección Historia y Contacto
+   ============================================== */
+.history-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.history-text {
+    flex: 2;
+    text-align: justify;
+}
+
+.history-content img {
+    flex: 1;
+    max-width: 400px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    min-width: 250px;
+}
+
+.margarita-profile {
+    background-color: #faf9f7; /* Un tono más claro que el fondo general */
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 5px solid var(--color-secondary);
+    margin-top: 20px;
+}
+
+.owner-quote {
+    font-style: italic;
+    font-weight: 600;
+    color:#4b3200;
+    margin-bottom: 15px;
+}
+
+/* Estilos Contacto */
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 30px auto 0;
+}
+
+.contact-info, .location-map {
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-secondary);
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info h3, .location-map h3 {
+    color: var(--color-accent);
+    margin-bottom: 15px;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: var(--color-primary); /* Cambiado de amarillo a verde para mejor contraste */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: var(--color-secondary);
+}
+
+
+/* ==============================================
+   Footer
+   ============================================== */
+footer {
+    background-color: var(--color-primary);
+    color: var(--color-light-text);
+    text-align: center;
+    padding: 25px 5%;
+    font-size: 0.95em;
+}
+
+.footer-design {
+    margin-top: 5px;
+    color: var(--color-secondary);
+    font-style: italic;
+}
+
+/* ==============================================
+   Efectos Dinámicos (Animaciones)
+   ============================================== */
+
+/* -- EFECTO FADE-IN AL BAJAR -- */
+.fade-in {
+    /* Oculto por defecto */
+    opacity: 0;
+    /* Ligeramente movido hacia abajo */
+    transform: translateY(30px);
+    /* Animación de entrada */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.is-visible {
+    /* Estado final (visible) */
+    opacity: 1;
+    transform: translateY(0);
+}
+/* -- FIN EFECTO FADE-IN -- */
+
+
+/* ==============================================
+   Responsividad (Móviles)
+   ============================================== */
+@media (max-width: 768px) {
+    .contact-grid, .history-content {
+        flex-direction: column;
+    }
+    
+    .history-content img {
+        border-radius: 15px; /* Menos lúdico en móvil para adaptarse mejor */
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+}
