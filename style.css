@@ -7,15 +7,15 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Variables de Color para la estética TIERRA / RÚSTICA */
+/* Variables de Color para la estética TIERRA / RÚSTICA, optimizada para LEGIBILIDAD */
 :root {
-    --color-primary: #6D4C41; /* MARRÓN CACAO - Principal, Header, Footer */
-    --color-secondary: #FBEBB2; /* BEIGE ARENA - Acento, Títulos, CTA */
-    --color-background: #F7F4EB; /* BLANCO HUESO - Fondo General */
-    --color-text: #333333; /* Gris Oscuro para legibilidad */
+    --color-primary: #5A4033; /* MARRÓN CACAO OSCURO - Principal, Header, Footer */
+    --color-secondary: #EAD9C6; /* BEIGE ARENA CLARO - Acento, Títulos, CTA */
+    --color-background: #FCFAF5; /* BLANCO SUAVE/CREMA - Fondo General */
+    --color-text: #222222; /* CASI NEGRO - Texto principal para máximo contraste */
     --color-light-text: #fff;
-    --color-accent: #5D7F4E; /* VERDE MUSGO - Botones, Íconos, Naturaleza */
-    --color-dark-text: #333333; /* Texto principal */
+    --color-accent: #4E7942; /* VERDE BOSQUE OSCURO - Botones, Íconos, Naturaleza */
+    --color-dark-text: #222222; /* Texto principal */
 }
 
 /* Base y Tipografía */
@@ -35,7 +35,7 @@ h1, h2, h3 {
 
 /* Estilo para la Navegación (Header) */
 header {
-    background-color: var(--color-primary); /* MARRÓN CACAO */
+    background-color: var(--color-primary); /* MARRÓN CACAO OSCURO */
     color: var(--color-light-text);
     padding: 15px 5%;
     display: flex;
@@ -74,14 +74,14 @@ nav a:hover {
    Sección Principal (Hero)
    ============================================== */
 .hero {
-    /* Degradado de MARRÓN CACAO a un tono más claro */
-    background: linear-gradient(135deg, var(--color-primary) 0%, #8d6b5e 100%); 
+    /* Degradado de MARRÓN CACAO OSCURO a un tono más claro */
+    background: linear-gradient(135deg, var(--color-primary) 0%, #7d5e50 100%); 
     height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: var(--color-light-text);
+    color: var(--color-light-text); /* Texto blanco para alto contraste */
     position: relative;
     padding: 0 5%;
 }
@@ -95,7 +95,7 @@ nav a:hover {
     max-width: 900px;
     padding: 30px;
     /* Fondo transparente con toque marrón */
-    background-color: rgba(109, 76, 65, 0.2); 
+    background-color: rgba(90, 64, 51, 0.25); 
     backdrop-filter: blur(1px);
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -115,8 +115,8 @@ nav a:hover {
 }
 
 .cta-button {
-    background-color: var(--color-accent); /* VERDE MUSGO */
-    color: var(--color-light-text);
+    background-color: var(--color-accent); /* VERDE BOSQUE OSCURO */
+    color: var(--color-light-text); /* Texto BLANCO para alto contraste */
     padding: 15px 40px;
     text-decoration: none;
     font-size: 1.2em;
@@ -128,7 +128,7 @@ nav a:hover {
 }
 
 .cta-button:hover {
-    background-color: #799a6c; /* Verde más claro */
+    background-color: var(--color-primary); /* MARRÓN CACAO OSCURO en hover */
     transform: translateY(-3px);
 }
 
@@ -145,23 +145,23 @@ nav a:hover {
 }
 
 .history-background {
-    background-color: var(--color-background); /* BLANCO HUESO */
+    background-color: var(--color-background); /* BLANCO SUAVE */
 }
 
 .contact-background {
-    background-color: var(--color-background); /* BLANCO HUESO */
+    background-color: var(--color-background); /* BLANCO SUAVE */
 }
 
 h2 {
     font-size: 2.8em;
     margin-bottom: 0.5em;
-    color: var(--color-primary); /* MARRÓN CACAO */
+    color: var(--color-primary); /* MARRÓN CACAO OSCURO */
     text-shadow: 2px 2px 0 var(--color-secondary); /* BEIGE ARENA */
 }
 
 .subtitle {
     font-weight: 300;
-    color: var(--color-dark-text);
+    color: var(--color-dark-text); /* CASI NEGRO */
     margin-bottom: 40px;
     font-size: 1.1em;
     display: block;
@@ -180,7 +180,7 @@ h2 {
 .separator-inline {
     margin: 30px 0;
     border: 0;
-    border-top: 1px dashed var(--color-accent); /* VERDE MUSGO */
+    border-top: 1px dashed var(--color-accent); /* VERDE BOSQUE OSCURO */
 }
 
 /* ==============================================
@@ -199,7 +199,7 @@ h2 {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    border: 3px solid var(--color-accent); /* VERDE MUSGO */
+    border: 3px solid var(--color-accent); /* VERDE BOSQUE OSCURO */
     width: 320px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -210,7 +210,7 @@ h2 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* NUEVA CABECERA DE COLOR (SIMULA LA FOTO) */
+/* CABECERA DE COLOR (SIMULA LA FOTO) */
 .casa-card::before {
     content: '';
     display: block;
@@ -218,13 +218,13 @@ h2 {
     /* Degradado base de Beige a Blanco */
     background: linear-gradient(180deg, var(--color-secondary) 0%, #fff 100%);
 }
-.casa-card:nth-child(1)::before { background: linear-gradient(180deg, var(--color-accent) 0%, #fff 100%); } /* Verde Musgo */
+.casa-card:nth-child(1)::before { background: linear-gradient(180deg, var(--color-accent) 0%, #fff 100%); } /* Verde Bosque */
 .casa-card:nth-child(2)::before { background: linear-gradient(180deg, var(--color-secondary) 0%, #fff 100%); } /* Beige Arena */
 .casa-card:nth-child(3)::before { background: linear-gradient(180deg, #b38b6d 0%, #fff 100%); } /* Tono más tostado */
 
 .casa-card h3 {
     padding: 20px 0 5px;
-    color: var(--color-primary); /* MARRÓN CACAO */
+    color: var(--color-primary); /* MARRÓN CACAO OSCURO */
     font-size: 1.8em;
 }
 
@@ -250,10 +250,10 @@ h2 {
 
 .equipamiento-text {
     /* Estilo para el texto dentro del acordeón */
-    background-color: var(--color-background); /* BLANCO HUESO */
+    background-color: var(--color-background); /* BLANCO SUAVE */
     padding: 15px;
     border-radius: 8px;
-    border: 1px dashed var(--color-accent); /* VERDE MUSGO */
+    border: 1px dashed var(--color-accent); /* VERDE BOSQUE OSCURO */
     text-align: left;
     font-size: 0.95em;
     color: var(--color-dark-text);
@@ -262,7 +262,7 @@ h2 {
 
 .details-button {
     display: inline-block;
-    background-color: var(--color-accent); /* VERDE MUSGO */
+    background-color: var(--color-accent); /* VERDE BOSQUE OSCURO */
     color: var(--color-light-text);
     padding: 12px 25px;
     text-decoration: none;
@@ -273,7 +273,7 @@ h2 {
 }
 
 .details-button:hover {
-    background-color: var(--color-primary); /* MARRÓN CACAO */
+    background-color: var(--color-primary); /* MARRÓN CACAO OSCURO */
 }
 
 
@@ -305,7 +305,7 @@ h2 {
 .owner-quote {
     font-style: italic;
     font-weight: 600;
-    color: var(--color-dark-text);
+    color: var(--color-dark-text); /* CASI NEGRO */
     margin-bottom: 15px;
 }
 
@@ -329,7 +329,7 @@ h2 {
 }
 
 .contact-info h3, .location-map h3 {
-    color: var(--color-accent); /* VERDE MUSGO */
+    color: var(--color-accent); /* VERDE BOSQUE OSCURO */
     margin-bottom: 15px;
 }
 
@@ -345,10 +345,11 @@ h2 {
     display: flex; 
     align-items: center;
     font-size: 1.05em;
+    color: var(--color-dark-text); /* Texto de lista oscuro para legibilidad */
 }
 
 .contact-info li i {
-    color: var(--color-accent); /* VERDE MUSGO */
+    color: var(--color-accent); /* VERDE BOSQUE OSCURO */
     font-size: 1.3em;
     width: 30px; 
     text-align: center;
@@ -361,25 +362,25 @@ h2 {
 /* Iconos en títulos */
 h2 i, h3 i {
     margin-right: 12px;
-    color: var(--color-accent); /* VERDE MUSGO */
+    color: var(--color-accent); /* VERDE BOSQUE OSCURO */
 }
 .margarita-profile h3 i {
-    color: var(--color-primary); /* MARRÓN CACAO */
+    color: var(--color-primary); /* MARRÓN CACAO OSCURO */
 }
 .casa-card h3 i {
-    color: var(--color-primary); /* MARRÓN CACAO */
+    color: var(--color-primary); /* MARRÓN CACAO OSCURO */
 }
 /* -- FIN ESTILOS ÍCONOS -- */
 
 .contact-info a {
-    color: var(--color-primary); /* MARRÓN CACAO */
+    color: var(--color-primary); /* MARRÓN CACAO OSCURO */
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s;
 }
 
 .contact-info a:hover {
-    color: var(--color-accent); /* VERDE MUSGO */
+    color: var(--color-accent); /* VERDE BOSQUE OSCURO */
 }
 
 
@@ -387,7 +388,7 @@ h2 i, h3 i {
    Footer
    ============================================== */
 footer {
-    background-color: var(--color-primary); /* MARRÓN CACAO */
+    background-color: var(--color-primary); /* MARRÓN CACAO OSCURO */
     color: var(--color-light-text);
     text-align: center;
     padding: 25px 5%;
