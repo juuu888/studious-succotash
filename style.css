@@ -7,15 +7,15 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Variables de Color para la estética lúdica */
+/* Variables de Color para la estética TIERRA / RÚSTICA */
 :root {
-    --color-primary: #b0db65; /* Verde Hoja/Oscuro */
-    --color-secondary: #eece7b; /* Amarillo Pastel Lúdico */
-    --color-background: #fff8b9; /* Fondo Blanco Roto/Crema Suave */
-    --color-text: #333;
+    --color-primary: #6D4C41; /* MARRÓN CACAO - Principal, Header, Footer */
+    --color-secondary: #FBEBB2; /* BEIGE ARENA - Acento, Títulos, CTA */
+    --color-background: #F7F4EB; /* BLANCO HUESO - Fondo General */
+    --color-text: #333333; /* Gris Oscuro para legibilidad */
     --color-light-text: #fff;
-    --color-accent: #6aa84f; /* Verde más brillante/amigable */
-    --color-dark-text: #391d01; /* Marrón oscuro para contraste */
+    --color-accent: #5D7F4E; /* VERDE MUSGO - Botones, Íconos, Naturaleza */
+    --color-dark-text: #333333; /* Texto principal */
 }
 
 /* Base y Tipografía */
@@ -35,7 +35,7 @@ h1, h2, h3 {
 
 /* Estilo para la Navegación (Header) */
 header {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary); /* MARRÓN CACAO */
     color: var(--color-light-text);
     padding: 15px 5%;
     display: flex;
@@ -66,16 +66,16 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--color-secondary);
+    color: var(--color-secondary); /* BEIGE ARENA en hover */
     text-decoration: underline;
 }
 
 /* ==============================================
-   Sección Principal (Hero) - MODIFICADO
+   Sección Principal (Hero)
    ============================================== */
 .hero {
-    /* ELIMINADA LA IMAGEN DE FONDO */
-    background: linear-gradient(135deg, var(--color-primary) 0%, #b8d492 100%); /* Degradado verde/claro */
+    /* Degradado de MARRÓN CACAO a un tono más claro */
+    background: linear-gradient(135deg, var(--color-primary) 0%, #8d6b5e 100%); 
     height: 90vh;
     display: flex;
     justify-content: center;
@@ -87,7 +87,6 @@ nav a:hover {
 }
 
 .hero::before {
-    /* Eliminado el filtro oscuro ya que el fondo es sólido */
     content: none; 
 }
 
@@ -95,8 +94,8 @@ nav a:hover {
     z-index: 1;
     max-width: 900px;
     padding: 30px;
-    /* Fondo más transparente para un efecto limpio */
-    background-color: rgba(255, 255, 255, 0.15); 
+    /* Fondo transparente con toque marrón */
+    background-color: rgba(109, 76, 65, 0.2); 
     backdrop-filter: blur(1px);
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -105,8 +104,8 @@ nav a:hover {
 .hero h1 {
     font-size: 3.8em;
     margin-bottom: 10px;
-    color: var(--color-secondary);
-    text-shadow: none; /* Quitamos la sombra para un diseño más plano */
+    color: var(--color-secondary); /* BEIGE ARENA */
+    text-shadow: none;
 }
 
 .hero p {
@@ -116,8 +115,8 @@ nav a:hover {
 }
 
 .cta-button {
-    background-color: var(--color-secondary);
-    color: var(--color-dark-text);
+    background-color: var(--color-accent); /* VERDE MUSGO */
+    color: var(--color-light-text);
     padding: 15px 40px;
     text-decoration: none;
     font-size: 1.2em;
@@ -129,7 +128,7 @@ nav a:hover {
 }
 
 .cta-button:hover {
-    background-color: #ffe699; 
+    background-color: #799a6c; /* Verde más claro */
     transform: translateY(-3px);
 }
 
@@ -146,18 +145,18 @@ nav a:hover {
 }
 
 .history-background {
-    background-color: var(--color-background); 
+    background-color: var(--color-background); /* BLANCO HUESO */
 }
 
 .contact-background {
-    background-color: var(--color-background); 
+    background-color: var(--color-background); /* BLANCO HUESO */
 }
 
 h2 {
     font-size: 2.8em;
     margin-bottom: 0.5em;
-    color: var(--color-dark-text);
-    text-shadow: 2px 2px 0 var(--color-secondary);
+    color: var(--color-primary); /* MARRÓN CACAO */
+    text-shadow: 2px 2px 0 var(--color-secondary); /* BEIGE ARENA */
 }
 
 .subtitle {
@@ -172,7 +171,8 @@ h2 {
 .separator {
     border: 0;
     height: 5px;
-    background: linear-gradient(90deg, var(--color-background) 0%, var(--color-secondary) 15%, var(--color-primary) 50%, var(--color-secondary) 85%, var(--color-background) 100%);
+    /* Degradado de la paleta tierra */
+    background: linear-gradient(90deg, var(--color-background) 0%, var(--color-secondary) 15%, var(--color-accent) 50%, var(--color-secondary) 85%, var(--color-background) 100%);
     margin: 60px 0;
     opacity: 0.8;
 }
@@ -180,11 +180,11 @@ h2 {
 .separator-inline {
     margin: 30px 0;
     border: 0;
-    border-top: 1px dashed var(--color-secondary);
+    border-top: 1px dashed var(--color-accent); /* VERDE MUSGO */
 }
 
 /* ==============================================
-   Galería de Casas - MODIFICADO
+   Galería de Casas
    ============================================== */
 .casa-gallery {
     display: flex;
@@ -199,7 +199,7 @@ h2 {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    border: 3px solid var(--color-accent);
+    border: 3px solid var(--color-accent); /* VERDE MUSGO */
     width: 320px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -214,20 +214,17 @@ h2 {
 .casa-card::before {
     content: '';
     display: block;
-    height: 100px; /* Alto fijo para la cabecera de color */
+    height: 100px;
+    /* Degradado base de Beige a Blanco */
     background: linear-gradient(180deg, var(--color-secondary) 0%, #fff 100%);
-    /* Tono diferente para cada casa (ejemplo) */
 }
-.casa-card:nth-child(1)::before { background: linear-gradient(180deg, var(--color-secondary) 0%, #fff 100%); }
-.casa-card:nth-child(2)::before { background: linear-gradient(180deg, #b8d492 0%, #fff 100%); }
-.casa-card:nth-child(3)::before { background: linear-gradient(180deg, #f7d4c0 0%, #fff 100%); }
-
-/* REGLAS ELIMINADAS: .casa-card img:first-child */
-/* REGLAS ELIMINADAS: .inner-images img (se muestra texto) */
+.casa-card:nth-child(1)::before { background: linear-gradient(180deg, var(--color-accent) 0%, #fff 100%); } /* Verde Musgo */
+.casa-card:nth-child(2)::before { background: linear-gradient(180deg, var(--color-secondary) 0%, #fff 100%); } /* Beige Arena */
+.casa-card:nth-child(3)::before { background: linear-gradient(180deg, #b38b6d 0%, #fff 100%); } /* Tono más tostado */
 
 .casa-card h3 {
     padding: 20px 0 5px;
-    color: var(--color-primary);
+    color: var(--color-primary); /* MARRÓN CACAO */
     font-size: 1.8em;
 }
 
@@ -241,7 +238,7 @@ h2 {
 .inner-images.fotos-content {
     max-height: 0;
     overflow: hidden;
-    display: block; /* Cambiado a block para el texto */
+    display: block;
     transition: max-height 0.5s ease-out;
     padding: 0 20px;
 }
@@ -253,10 +250,10 @@ h2 {
 
 .equipamiento-text {
     /* Estilo para el texto dentro del acordeón */
-    background-color: var(--color-background);
+    background-color: var(--color-background); /* BLANCO HUESO */
     padding: 15px;
     border-radius: 8px;
-    border: 1px dashed var(--color-accent);
+    border: 1px dashed var(--color-accent); /* VERDE MUSGO */
     text-align: left;
     font-size: 0.95em;
     color: var(--color-dark-text);
@@ -265,7 +262,7 @@ h2 {
 
 .details-button {
     display: inline-block;
-    background-color: var(--color-accent);
+    background-color: var(--color-accent); /* VERDE MUSGO */
     color: var(--color-light-text);
     padding: 12px 25px;
     text-decoration: none;
@@ -276,12 +273,12 @@ h2 {
 }
 
 .details-button:hover {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary); /* MARRÓN CACAO */
 }
 
 
 /* ==============================================
-   Sección Historia y Contacto - MODIFICADO
+   Sección Historia y Contacto
    ============================================== */
 .history-content {
     display: flex;
@@ -297,14 +294,11 @@ h2 {
     text-align: justify;
 }
 
-/* ELIMINADA LA IMAGEN DE HISTORIA */
-/* .history-content img { ... } */
-
 .margarita-profile {
     background-color: #faf9f7;
     padding: 25px;
     border-radius: 10px;
-    border-left: 5px solid var(--color-secondary);
+    border-left: 5px solid var(--color-secondary); /* BEIGE ARENA */
     margin-top: 20px;
 }
 
@@ -329,13 +323,13 @@ h2 {
     border-radius: 15px;
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--color-secondary);
+    border: 1px solid var(--color-secondary); /* BEIGE ARENA */
     flex: 1;
     min-width: 300px;
 }
 
 .contact-info h3, .location-map h3 {
-    color: var(--color-accent);
+    color: var(--color-accent); /* VERDE MUSGO */
     margin-bottom: 15px;
 }
 
@@ -345,7 +339,7 @@ h2 {
     text-align: left;
 }
 
-/* -- ESTILOS PARA LOS ÍCONOS (AÑADIDOS) -- */
+/* -- ESTILOS PARA LOS ÍCONOS -- */
 .contact-info li {
     margin-bottom: 10px;
     display: flex; 
@@ -354,38 +348,38 @@ h2 {
 }
 
 .contact-info li i {
-    color: var(--color-accent);
+    color: var(--color-accent); /* VERDE MUSGO */
     font-size: 1.3em;
     width: 30px; 
     text-align: center;
     margin-right: 10px; 
 }
 .contact-info li i.fa-whatsapp {
-    color: #25D366; 
+    color: #25D366; /* Verde WhatsApp oficial */
 }
 
 /* Iconos en títulos */
 h2 i, h3 i {
     margin-right: 12px;
-    color: var(--color-accent);
+    color: var(--color-accent); /* VERDE MUSGO */
 }
 .margarita-profile h3 i {
-    color: maroon; 
+    color: var(--color-primary); /* MARRÓN CACAO */
 }
 .casa-card h3 i {
-    color: var(--color-primary); 
+    color: var(--color-primary); /* MARRÓN CACAO */
 }
 /* -- FIN ESTILOS ÍCONOS -- */
 
 .contact-info a {
-    color: var(--color-primary); 
+    color: var(--color-primary); /* MARRÓN CACAO */
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s;
 }
 
 .contact-info a:hover {
-    color: var(--color-secondary);
+    color: var(--color-accent); /* VERDE MUSGO */
 }
 
 
@@ -393,7 +387,7 @@ h2 i, h3 i {
    Footer
    ============================================== */
 footer {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary); /* MARRÓN CACAO */
     color: var(--color-light-text);
     text-align: center;
     padding: 25px 5%;
@@ -402,7 +396,7 @@ footer {
 
 .footer-design {
     margin-top: 5px;
-    color: var(--color-secondary);
+    color: var(--color-secondary); /* BEIGE ARENA */
     font-style: italic;
 }
 
@@ -429,8 +423,6 @@ footer {
         flex-direction: column;
     }
     
-    /* El history-content img ya no existe, eliminamos la regla. */
-
     .hero h1 {
         font-size: 2.5em;
     }
